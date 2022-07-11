@@ -23,6 +23,12 @@ export const CreateUserScreen = () => {
         setState({ ...state, [name]: value })
     }
 
+    const saveNewUser = () =>{
+        if(state.name || state.lastName || state.phone || state.email === ''){
+            alert('llene las mondades')
+        }
+    }
+
     return (
     <View>
       <ScrollView style = {styles.container}>
@@ -39,7 +45,7 @@ export const CreateUserScreen = () => {
           <TextInput style={styles.textGrup} placeholder="Email" onChangeText={ (value) => handleChangeText('email', value) }/>
         </View>
         <View>
-          <TouchableOpacity onPress={ console.log(state) }>
+          <TouchableOpacity onPress={() => saveNewUser()}>
             <Text>Save User</Text>
           </TouchableOpacity>
         </View>
